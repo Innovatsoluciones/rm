@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="ir.sequence" id="xx_sale_order_split">
+            <field name="name">Sale order split</field>
+            <field name="code">x.sale.order</field>
+            <field name="padding">4</field>
+            <field name="prefix">PEDIDO</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>    
+</odoo>

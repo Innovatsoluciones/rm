@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="l4l_view_split_purchase_wizard_order_form" model="ir.ui.view">
+        <field name="name">l4l_view_split_purchase_wizard_order_form</field>
+        <field name="model">leap.purchase.order.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Split Purchase Order">
+                <sheet>
+                    <field name="split_order_line">
+                        <tree editable="bottom" create="0">
+                            <field name="line_id" column_invisible="1"/>
+                            <field name="product_id"/>
+                            <field name="quantity"/>
+                            <field name="uom"/>
+                        </tree>
+                    </field>
+                </sheet>
+                <footer>
+                    <button string="Split" name="split_purchase" type="object" class="btn-primary mx-1"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
