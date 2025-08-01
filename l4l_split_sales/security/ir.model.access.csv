@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_leap_sale_order_wizard_all,access.leap.sale.order.wizard.all,model_leap_sale_order_wizard,base.group_user,1,1,1,1
+access_leap_sale_order_line_all,access.leap.sale.order.line.all,model_leap_sale_order_line,base.group_user,1,1,1,1
+access_x_sale_order_line_delivered,access.x.sale.order.line.delivered,model_x_sale_order_line_delivered,base.group_user,1,1,1,1
