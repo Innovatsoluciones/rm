@@ -1,3 +1,0 @@
-"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-"access_sale_order_split_quotation_wizard","access.sale.order.split.quotation.wizard","model_sale_order_split_quotation","sales_team.group_sale_manager",1,1,1,1
-"access_x_sale_order_line_delivered","x_sale_order_line_delivered","model_x_sale_order_line_delivered","base.group_user",1,1,1,1
