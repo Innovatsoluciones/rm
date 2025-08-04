@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="l4l_purchase_order_kpis_tree_inherit_purchase_split" model="ir.ui.view">
+        <field name="name">l4l.purchase.order.kpis.tree.inherit.purchase.split</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+        <field name="arch" type="xml">
+            <field name="state" position="before">
+                <field name="received_state_progress" widget="percentpie" string="Progress"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="l4l_split_purchase_views_form" model="ir.ui.view">
+        <field name="name">l4l.split.purchase.views.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/div[1]" position="before">
+                <field name="order_line_count" invisible="1"/>
+                <widget name="web_ribbon" title="Completado" bg_color="text-bg-info"
+                        invisible="order_line_count > 1 or (order_line_count == 0 and split_order_count == 0)"/>
+            </xpath>
+
+            <xpath expr="//button[@name='button_confirm']" position="before">
+                <button name="button_split_order" string="Dividir" type="object" invisible="state != 'draft'"
+                        class="oe_highlight"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="received_count" invisible="1"/>
+                <field name="total_count" invisible="1" />
+                <field name="received_state_progress" widget="percentpie" string="Received progress"/>
+                <field name="purchase_origin_id" readonly="1" force_save="1"/>
+            </xpath>
+            <div>
+                <button type="object" name="action_split_smart_button" class="split_order" icon="fa-random"
+                        invisible="split_order_count == 0">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="split_order_count" widget="statinfo" nolabel="1" class="mr4"/>
+                            Documentos relacionados
+                            <br/>
+                        </span>
+                    </div>
+                </button>
+            </div>
+            <xpath expr="//notebook" position="inside">
+                <page name="qty_received" string="Cantidades recibidas">
+                     <field name="lines_received_ids" nolabel="1">
+                        <tree edit="False" >
+                            <field name="order_id"/>
+                            <field name="x_pc_order_id"/>
+                            <field name="x_order_line_id"/>
+                            <field name="qty_received"/>
+                            <field name="product_qty"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

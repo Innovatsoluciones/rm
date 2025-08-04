@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_leap_purchase_order_wizard_all,access.leap.purchase.order.wizard.all,model_leap_purchase_order_wizard,base.group_user,1,1,1,1
+access_leap_purchase_order_line_all,access.leap.purchase.order.line.all,model_leap_purchase_order_line,base.group_user,1,1,1,1
+access_x_purchase_order_line_received,access.x.purchase.order.line.received,model_x_purchase_order_line_received,base.group_user,1,1,1,1
