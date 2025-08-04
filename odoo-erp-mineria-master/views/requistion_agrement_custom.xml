@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <!-- Heredar la vista purchase.requisition.tree -->
+        <record id="view_purchase_requisition_tree_inherit" model="ir.ui.view">
+            <field name="name">purchase.requisition.tree.inherit</field>
+            <field name="model">purchase.requisition</field>
+            <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_tree"/>
+            <field name="arch" type="xml">
+               <!-- Modificar el atributo 'string' de la vista 'tree' -->
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="string" translate="off">Acuerdos</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

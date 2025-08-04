@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Modal de confirmación -->
+    <record id="view_confirm_validate_picking" model="ir.ui.view">
+        <field name="name">confirm.validate.picking.wizard</field>
+        <field name="model">stock.picking</field>
+        <field name="arch" type="xml">
+            <form string="Confirmar Validación">
+                <p>¿Está seguro que desea registrar el recibimiento de productos? Una vez confirmado, este registro no podrá ser modificado.</p>
+                <footer>
+                    <button name="button_validate_confirmed" 
+                            string="Confirmar" 
+                            type="object" 
+                            class="btn-primary"/>
+                    <button string="Cancelar" 
+                            class="btn-secondary" 
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_picking_form_inherit" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <button name="action_toggle_is_locked" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </button>
+        </field>
+    </record>
+</odoo> 

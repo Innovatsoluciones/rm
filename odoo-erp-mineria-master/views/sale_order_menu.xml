@@ -1,0 +1,5 @@
+<odoo>
+    <record id="sale.sale_order_menu" model="ir.ui.menu">
+        <field name="name">Mis Órdenes de Venta</field>
+    </record>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_order,access.sale.order,model_sale_order,,1,1,1,1
+access_custom_input_wizard,access.custom.input.wizard,model_custom_input_wizard,,1,1,1,1
+access_custom_input_wizard_line,access.custom.input.wizard.line,model_custom_input_wizard_line,,1,1,1,1

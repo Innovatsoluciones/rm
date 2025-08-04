@@ -1,0 +1,10 @@
+<odoo>
+    <data noupdate="1">
+        <record id="seq_invoice" model="ir.sequence">
+            <field name="name">Customer Invoices</field>
+            <field name="code">account.move</field>
+            <field name="prefix">INV/</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

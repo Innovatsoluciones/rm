@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Heredamos la vista de árbol existente -->
+        <record id="view_purchase_agreement_tree_custom" model="ir.ui.view">
+            <field name="name">purchase.agreement.tree.custom</field>
+            <field name="model">purchase.agreement</field>
+            <field name="inherit_id" ref="purchase.view_purchase_agreement_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="string">Requisito</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

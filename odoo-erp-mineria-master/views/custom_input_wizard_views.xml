@@ -1,0 +1,28 @@
+
+<odoo>
+    <record id="view_custom_input_wizard_form_two" model="ir.ui.view">
+        <field name="name">custom.input.wizard.form</field>
+        <field name="model">custom.input.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Custom Input Wizard">
+                <group>
+                    <field name="sale_order_id" invisible="1"/>
+                    <field name="order_line_ids">
+                        <tree string="Líneas del pedido" editable="form">
+                            <field name="sale_order_line_id" readonly="1" force_save="1" string="Producto"/>
+                            <field name="custom_quantity" string="Cantidad"/>
+                            <field name="sale_order_completed" readonly="1" force_save="1" string="Producto" invisible="1"/>
+                            <field name="sale_order_product_uom_qty" readonly="1" force_save="1" string="Producto" invisible="1"/>
+                        </tree>
+                    </field>
+                    <field name="sale_order_state_sale_id" options="{'no_create': True}" string="Sale Orders"/>
+                    <field name="selected_sale_order_id" string="Test" invisible="1"/>
+                </group>
+                <footer>
+                    <button string="Confirmar" type="object" name="action_confirm" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

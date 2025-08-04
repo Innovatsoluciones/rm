@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="purchase_order_form_custom" model="ir.ui.view">
+        <field name="name">purchase.purchase.order.form.crimiro.custom</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='requisition_id']" position="attributes">
+                <attribute name="attrs">{'invisible': True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='currency_id']" position="before">
+                <field name="requisition_ids" widget="many2many_tags" placeholder="Requisiones"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='product_qty']" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', '=', 'purchase')]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', '=', 'purchase')]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='taxes_id']" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', '=', 'purchase')]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='button_cancel']" position="after">
+                <button name="force_cancel_with_pickings" 
+                        type="object" 
+                        class="oe_highlight btn-danger" 
+                        string="Forzar Cancelación"
+                        states="purchase,done"
+                        groups="purchase.group_purchase_manager"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
